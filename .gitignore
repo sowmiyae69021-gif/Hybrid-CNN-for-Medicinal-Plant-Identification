@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env/
+.envrc
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Dataset folders
+data/raw/
+data/processed/
+
+# Training outputs
+runs/
+reports/
+exports/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# TensorBoard logs
+logs/
+
+# Model checkpoints
+*.h5
+*.ckpt
+*.pb
+*.tflite
+
+# IDE files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.log
