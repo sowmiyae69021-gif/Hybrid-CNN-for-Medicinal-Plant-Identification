@@ -1,0 +1,50 @@
+# Experiment configuration for Hybrid CNN Medicinal Plant Identification
+
+seed: 42
+
+dataset:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  splits_dir: data/splits
+  image_size: 224
+  num_classes: 38
+
+splits:
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+  stratified: true
+
+training:
+  batch_size: 32
+  epochs: 30
+  learning_rate: 0.001
+  optimizer: adam
+  early_stopping_patience: 7
+  dropout: 0.5
+
+augmentation:
+  horizontal_flip: true
+  rotation_range: 20
+  zoom_range: 0.2
+  width_shift_range: 0.1
+  height_shift_range: 0.1
+  brightness_range: [0.8, 1.2]
+
+model:
+  backbone1: inceptionv3
+  backbone2: resnet50
+  pretrained: true
+  fusion: concatenate
+  dense_units:
+    - 1024
+    - 512
+
+cross_validation:
+  folds: 5
+
+paths:
+  checkpoints: runs/checkpoints
+  logs: runs/logs
+  reports: reports
+  exports: exports
